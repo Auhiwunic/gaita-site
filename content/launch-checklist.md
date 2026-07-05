@@ -4,6 +4,36 @@ Built from a 3-agent research pass (App Store review + iOS hardening + QA, with 
 
 ---
 
+## (0) Stress-audit hardening pass — 2026-07-05
+
+A 12-agent adversarial stress-audit (each finding independently verify-checked; 6 overstated claims rejected) plus a live simulator run-through found and fixed the gaps below. All compile; the onboarding launch-blocker was re-verified end-to-end in the sim. The whole diff then went through a second 5-dimension adversarial review before commit.
+
+**Launch-blockers / data-loss (fixed)**
+- ✅ **Onboarding consent dead-end.** The final "Your data, your call" screen required ALL three consents ON to finish (Finish silently disabled) and stamped all three as granted regardless. Consents are now optional; the ledger records only what was granted; Finish gated on the age check alone. Fixed new-user + existing-user paths + the model. Re-verified in sim (Finish now advances with all toggles off).
+- ✅ **Account deletion wiped cloud data before reauth** → cancelled reauth left data gone + account alive. Now reauthenticates first; a cancel wipes nothing. Anonymous fast-path preserved.
+- ✅ **Offline first-run deadlock** — anonymous sign-in throws with no network → stuck on "Getting ready…". Added a Try Again retry.
+- ✅ **VideoProcessor hang** — frame loop never checked `writer.status == .failed` → infinite sleep-spin on a mid-stream writer failure. Now throws.
+- ✅ **Silent run-save failure** — `saveError` was assigned but never rendered; now shown so a failed save can't be silently discarded.
+- ✅ **Unanalyzable clip = silent no-op** after a 30–60s wait; now shows "Couldn't read that clip" and clears the stale scan warning that used to paint on the previous run's card.
+- ✅ **GPS-denied / zero-distance run** reached the finish screen with an inert Save; now explains why + genuinely disables Save.
+
+**Revenue / trust / robustness (fixed)**
+- ✅ **Paywall bypass** — the Analyze bento HISTORY tile opened full history free; now gated + shows a lock.
+- ✅ **Fabricated sample "Past Runs"** (invented cities/paces, tappable) removed from the build.
+- ✅ **Music stayed ducked forever after a run** — audio session now deactivates on coach stop / finish / toggle-off.
+- ✅ **RunHistoryView infinite spinner** on transient nil-user — fixed with `defer`.
+- ✅ **Force-update kill-switch** (`needsForcedUpdate` / `min_supported_build`) was computed but never consumed; now drives a real blocking update wall.
+- ✅ **Maintenance banner** (`maintenance_message`) was fetched but never shown; now rendered as a top banner.
+- ✅ **Anon→existing-account merge** now carries settings/plans too (only when the target has none, so a real account is never clobbered).
+- ✅ **Pending (Ask-to-Buy / SCA) purchase** now shows an "approval pending" notice instead of a silently reverted button.
+- ✅ **CoachChat empty-state** (`emptyToday`) was dead code; now rendered when there are no analyses yet.
+
+Rejected by the verify pass (not real): mile-cue continuation race, "voice recording routes rest-of-run to speaker", `fromFirestore` consent erasure (merge:true protects), ProfileView spinner (unused state), onboarding `onDone` double-fire (idempotent).
+
+Still open (LOW, deferred): StoreKit grace/billing-retry grant + `.revoked` handling beyond the current `revocationDate` exclusion.
+
+---
+
 ## (A) BLOCKERS — green before you submit
 
 **Paywall / StoreKit**
@@ -28,18 +58,18 @@ Built from a 3-agent research pass (App Store review + iOS hardening + QA, with 
 **Device / backend**
 - ⬜ Validate on an iPhone SE-class device under thermal + memory pressure during pose inference.
 - ⬜ Cold-launch < 1s, no main-thread work in launch; upgrade-migration test (runs/routes survive build-over-build).
-- ✅ Firebase Remote Config kill-switches wired (`coach_enabled`, `scan_enabled`, `min_supported_build`, `maintenance_message`) with bundled offline defaults; coach answers locally + scan shows "unavailable" when flipped off. TODO: create the params in the Firebase console.
+- ✅ Firebase Remote Config kill-switches wired (`coach_enabled`, `scan_enabled`, `min_supported_build`, `maintenance_message`) with bundled offline defaults; coach answers locally + scan shows "unavailable" when flipped off. **All four are now consumed in-app** (force-update wall + maintenance banner added 2026-07-05). TODO: create the params in the Firebase console.
 
 ## (B) SHOULD-FIX — before launch
 
 - ✅ Restore Purchases button (PaywallView). ✅ Sign in with Apple present (onboarding). ✅ Background modes + `ITSAppUsesNonExemptEncryption` set.
-- ⬜ StoreKit: handle `.pending` (Ask-to-Buy), always `transaction.finish()`, grant during grace/billing-retry, wire refund/`.revoked`.
+- 🟡 StoreKit: `.pending` (Ask-to-Buy/SCA) now shows an "approval pending" notice and unlocks via `Transaction.updates`; `.revoked` excluded via `revocationDate`; `transaction.finish()` called on verified buys (2026-07-05). Remaining: explicit grant during grace/billing-retry, refund flow.
 - ⬜ HealthKit: ensure no health/derived data goes to iCloud backup or Firebase analytics/ads; request only what you use.
 - ⬜ Frame power/impact/efficiency/grades as training metrics, not medical; add "not medical advice" disclaimer.
 - ⬜ Background `location` only during an active run; `audio` is genuinely the TTS coach; justify both in Review notes.
 - ⬜ Video-ML memory: inner `autoreleasepool` per frame, `defer`-release CVPixelBuffer on error paths, reuse model + AVAssetReader, decimate FPS; audit `[weak self]`; cooperative `Task.checkCancellation()` when leaving Analyze.
 - ⬜ Network: explicit timeouts + bounded retry/backoff for the coach Cloud Function; Firestore offline persistence + `fromCache` surfaced.
-- ⬜ Every async surface has loading/empty/error/success states (empty Past Runs, failed-analysis retry, coach-thinking).
+- ✅ Every async surface has loading/empty/error/success states — empty Past Runs (fake samples removed), failed-analysis alert, RunHistory spinner fix, CoachChat empty-state, run-save error surfaced (all 2026-07-05). Remaining: coach-thinking indicator polish.
 - ⬜ Dynamic Type AX5 + VoiceOver sweep of onboarding / live-run / paywall; contrast ≥4.5:1; honor Reduce Motion.
 - ⬜ External TestFlight beta across SE / 13-15 / 16 Pro Max, latest + N-1 iOS; ≥1 full live run per class.
 - ⬜ Server quota/rate-limit + GCP budget alerts on the coach function; screenshots reflect v1.0 + note coach/scan need a sub; submit as the company entity (health data).
