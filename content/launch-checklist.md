@@ -20,15 +20,15 @@ Built from a 3-agent research pass (App Store review + iOS hardening + QA, with 
 - ⬜ Privacy Policy URL live in App Store Connect AND linked in-app; Support + Marketing URLs resolve.
 
 **Crash resilience + observability**
-- ⬜ Integrate Crashlytics (or Sentry) before the first TestFlight build; force a test crash; confirm symbolicated + dSYM upload.
-- ⬜ Purge force-unwraps/`try!`/`as!` on non-guaranteed paths (Firestore docs, StoreKit product lookups, BlazePose landmark arrays, HealthKit samples, JSON). Add a `safe:` subscript for the 33-landmark/frame arrays. Gate with SwiftLint (`force_unwrapping` etc. = error).
+- ✅ Crashlytics integrated (pod + `CrashReporter` wrapper + dSYM-upload build phase); auto-inits via `FirebaseApp.configure()`, non-fatal recording wired on the coach path. TODO: force a test crash on a real TestFlight build to confirm symbolication end-to-end.
+- ✅ Force-unwraps already safe: 0 `try!`, the 1 `as!` is the `layerClass` pattern, `.last!` all `.isEmpty`-guarded, BlazePose `landmarks[index]` is bounds-guarded, joints read via optional `point()`/`point3D()`. (SwiftLint gate still worth adding as a CI backstop.)
 - ⬜ Test camera + BlazePose on a physical device: live + library import, short + long (>2 min 1080p) clip, and a clip with no person — no crash/OOM.
 - ⬜ Test every permission DENIED (camera, health, location, mic, notifications) — degrade, never dead-end.
 
 **Device / backend**
 - ⬜ Validate on an iPhone SE-class device under thermal + memory pressure during pose inference.
 - ⬜ Cold-launch < 1s, no main-thread work in launch; upgrade-migration test (runs/routes survive build-over-build).
-- ⬜ Add Firebase Remote Config kill-switches (`coach_enabled`, `scan_enabled`, `min_supported_build`) with bundled offline defaults.
+- ✅ Firebase Remote Config kill-switches wired (`coach_enabled`, `scan_enabled`, `min_supported_build`, `maintenance_message`) with bundled offline defaults; coach answers locally + scan shows "unavailable" when flipped off. TODO: create the params in the Firebase console.
 
 ## (B) SHOULD-FIX — before launch
 
