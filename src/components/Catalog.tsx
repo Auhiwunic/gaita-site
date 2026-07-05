@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -71,10 +72,13 @@ export default function Catalog() {
           {SCREENS.map((s) => (
             <figure key={s.n} className="cat-item">
               <div className="bg-shell px-5 pb-0 pt-5 sm:px-7 sm:pt-7">
-                <img
+                <Image
                   src={s.src}
                   alt={`${s.label} screen in the Gaita app`}
-                  className="w-full rounded-t-[1.4rem] border border-black/10 shadow-[0_18px_40px_rgb(0_0_0/0.18)]"
+                  width={1206}
+                  height={2622}
+                  sizes="(max-width: 768px) 45vw, 22vw"
+                  className="h-auto w-full rounded-t-[1.4rem] border border-black/10 shadow-[0_18px_40px_rgb(0_0_0/0.18)]"
                 />
               </div>
               <figcaption className="mt-4 flex items-baseline gap-3">

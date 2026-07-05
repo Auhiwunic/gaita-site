@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -92,10 +93,13 @@ export default function HeroSkeleton() {
     >
       {/* Background: grayscale runner + aligned skeleton */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/photos/gait-sideview.webp"
           alt="Side view of a runner tracked by a pose skeleton"
-          className="h-full w-full object-cover object-[60%_center]"
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-[60%_center]"
         />
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"

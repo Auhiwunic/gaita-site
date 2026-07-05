@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /**
  * Footer: full-width blue track banner with the wordmark over it,
  * then a quiet link row. Photo credits stay — sourcing honesty.
@@ -22,10 +24,12 @@ export default function Footer() {
     <footer>
       {/* Banner */}
       <div className="relative h-[300px] overflow-hidden md:h-[420px]">
-        <img
+        <Image
           src="/photos/332835.jpg"
           alt="Blue athletics track, numbered lanes"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="display-caps text-[22vw] leading-none text-white md:text-[16vw]">

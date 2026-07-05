@@ -1,0 +1,1 @@
+Gaita — an AI running coach that reads your form, gait and power off a single video.

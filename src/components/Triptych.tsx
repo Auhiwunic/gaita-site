@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -55,11 +56,16 @@ export default function Triptych() {
     <section ref={root} className="mt-10 px-5 md:mt-14 md:px-10">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-2 md:grid-cols-12">
         {PHOTOS.map((p) => (
-          <div key={p.src} className={`trip-img ${p.span}`}>
-            <img
+          <div
+            key={p.src}
+            className={`trip-img ${p.span} relative h-[300px] md:h-[440px]`}
+          >
+            <Image
               src={p.src}
               alt={p.alt}
-              className="h-[300px] w-full object-cover md:h-[440px]"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1440px) 40vw, 576px"
+              className="object-cover"
             />
           </div>
         ))}
