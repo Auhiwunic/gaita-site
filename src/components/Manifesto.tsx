@@ -55,11 +55,10 @@ export default function Manifesto() {
 
           <div className="man-reveal mt-10 flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-[0.7rem] font-semibold text-bone">
-              A
+              G
             </span>
             <span className="text-sm leading-tight">
-              <span className="block font-semibold text-ink">Arjun C.</span>
-              <span className="block text-mid">Founder of Gaita</span>
+              <span className="block font-semibold text-ink">The Gaita Team</span>
             </span>
           </div>
         </div>
