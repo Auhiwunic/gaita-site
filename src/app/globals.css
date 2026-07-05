@@ -1,26 +1,210 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------
+   Gaita v4 — track day. Light editorial, SOAR-clean.
+   Paper gray canvas, ink type, hairline rules. Photography
+   carries all the color; the UI stays monochrome.
+   --------------------------------------------------------------- */
+@theme {
+  /* Canvas + ink */
+  --color-bone: #f1f1ef;      /* page background, warm paper gray */
+  --color-shell: #e7e7e4;     /* recessed tiles, image mats */
+  --color-ink: #141412;       /* near-black text */
+  --color-mid: #6d6d68;       /* secondary text */
+  --color-soft: #a3a39e;      /* tertiary, meta */
+  --color-line: rgb(20 20 18 / 0.16); /* hairline rules */
+
+  /* The one accent — signature cyan, shared with the app. Used only on
+     interactive chrome (CTAs, hovers, focus, the premium price); the
+     editorial body stays monochrome ink/paper. */
+  --color-accent: #00ced1;
+  --color-accent-ink: #05343a; /* dark teal for small text on accent fills */
+
+  /* Type: Archivo variable (display caps, meta labels),
+     Switzer (body), system mono unused by default */
+  --font-display: var(--font-archivo), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --font-sans: var(--font-switzer), -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---------------------------------------------------------------
+   Base
+   --------------------------------------------------------------- */
+html {
+  background: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bone);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-bone);
+}
+
+/* ---------------------------------------------------------------
+   Type helpers
+   --------------------------------------------------------------- */
+
+/* Massive uppercase display: slightly condensed neutral grotesk.
+   Archivo VF: width axis dialed to 90% for the tight editorial cut. */
+.display-caps {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-stretch: 90%;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+
+/* Section heads, smaller caps */
+.head-caps {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-stretch: 93%;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* Tiny wide-tracked meta labels. Never condensed. */
+.meta {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-stretch: 100%;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-mid);
+}
+
+/* Tabular figures for prices and readouts */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------
+   Legal document articles (rendered from content/*.md)
+   --------------------------------------------------------------- */
+.legal-doc h1 {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 650;
+  font-stretch: 92%;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.legal-doc h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal-doc h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.legal-doc p,
+.legal-doc li {
+  color: var(--color-mid);
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+.legal-doc ul,
+.legal-doc ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+.legal-doc ul {
+  list-style: disc;
+}
+.legal-doc ol {
+  list-style: decimal;
+}
+.legal-doc li {
+  margin-bottom: 0.4rem;
+}
+.legal-doc strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.legal-doc a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal-doc blockquote {
+  border-left: 2px solid var(--color-ink);
+  padding-left: 1rem;
+  margin: 1.25rem 0;
+  color: var(--color-mid);
+}
+.legal-doc code {
+  background: var(--color-shell);
+  border-radius: 6px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.9em;
+  color: var(--color-ink);
+}
+.legal-doc hr {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 2.25rem 0;
+}
+.legal-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+.legal-doc th,
+.legal-doc td {
+  border: 1px solid var(--color-line);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  color: var(--color-mid);
+}
+.legal-doc th {
+  color: var(--color-ink);
 }
