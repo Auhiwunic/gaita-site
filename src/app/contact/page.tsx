@@ -2,7 +2,17 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Reach the Gaita team for support, partnerships, press or a question about your data.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact — Gaita",
+    description:
+      "Reach the Gaita team for support, partnerships, press or a question about your data.",
+  },
+};
 
 const CHANNELS = [
   {

@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     description:
       "A super AI running coach in your pocket. Form, gait and power, read off one video.",
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: "Partnerships",
   description:
     "Partner with Gaita: running stores, clubs, coaches and affiliate programs.",
+  alternates: { canonical: "/partnerships" },
+  openGraph: {
+    title: "Partnerships — Gaita",
+    description:
+      "Partner with Gaita: running stores, clubs, coaches and affiliate programs.",
+  },
 };
 
 const FITS = [

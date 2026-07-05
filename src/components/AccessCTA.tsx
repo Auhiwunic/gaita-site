@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -105,11 +106,13 @@ export default function AccessCTA() {
           </p>
         </div>
 
-        <div className="cta-reveal md:col-span-5 md:col-start-8">
-          <img
+        <div className="cta-reveal relative h-[320px] md:col-span-5 md:col-start-8 md:h-[420px]">
+          <Image
             src="/photos/28448694.jpg"
             alt="Runners blurred mid sprint, black and white"
-            className="h-[320px] w-full object-cover md:h-[420px]"
+            fill
+            sizes="(max-width: 768px) 100vw, 42vw"
+            className="object-cover"
           />
         </div>
       </div>
