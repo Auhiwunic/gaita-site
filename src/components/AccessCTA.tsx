@@ -74,6 +74,7 @@ export default function AccessCTA() {
               type="email"
               name="email"
               required
+              aria-label="Email address for early access"
               placeholder="you@email.com"
               className="flex-1 border-b border-ink/40 bg-transparent pb-2 text-ink placeholder:text-soft focus:border-accent focus:outline-none"
             />
@@ -98,7 +99,7 @@ export default function AccessCTA() {
           <p className="cta-reveal mt-8 text-sm text-mid">
             Running a shop, a club or a program?{" "}
             <a
-              href="mailto:arjuncw2009@gmail.com?subject=Partnership"
+              href="mailto:solescanteam@gmail.com?subject=Partnership"
               className="text-ink underline decoration-accent/50 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
             >
               Talk partnerships

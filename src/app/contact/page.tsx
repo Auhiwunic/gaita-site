@@ -18,19 +18,19 @@ const CHANNELS = [
   {
     label: "Support",
     body: "Something broken, something confusing, or a question about your data.",
-    email: "arjuncw2009@gmail.com",
+    email: "solescanteam@gmail.com",
     subject: "Support",
   },
   {
     label: "Partnerships",
     body: "Shops, clubs, coaches and programs. Affiliate and wholesale included.",
-    email: "arjuncw2009@gmail.com",
+    email: "solescanteam@gmail.com",
     subject: "Partnership",
   },
   {
     label: "Press",
     body: "Writing about running tech. We will get you screens, facts and quotes.",
-    email: "arjuncw2009@gmail.com",
+    email: "solescanteam@gmail.com",
     subject: "Press",
   },
 ];

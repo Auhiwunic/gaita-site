@@ -4,7 +4,7 @@
 **Effective date:** June 22, 2026
 **Last updated:** July 3, 2026
 
-This Privacy Policy explains how Arjun Wategaonkar ("Gaita," "we," "us," or "our") collects, uses, shares, and protects your information when you use the Gaita mobile application (the "App"). By using the App, you agree to the practices described here.
+This Privacy Policy explains how Gaita ("we," "us," or "our") collects, uses, shares, and protects your information when you use the Gaita mobile application (the "App"). By using the App, you agree to the practices described here.
 
 ---
 
@@ -26,8 +26,8 @@ When the AI Voice Coach is **turned on** during a run:
 
 Gaita is a running-form and training companion. The App analyzes your running form from video, scans your shoe wear, tracks runs, builds a weekly training plan, and (optionally) coaches you by voice.
 
-**Data controller:** Arjun Wategaonkar
-**Contact:** arjuncw2009@gmail.com
+**Data controller:** Gaita
+**Contact:** solescanteam@gmail.com
 **Address:** 18 Kara E, California, USA
 
 ## 2. Information we collect
@@ -118,7 +118,7 @@ Depending on where you live, you may have the right to:
 
 **EEA/UK (GDPR):** our legal bases are your **consent** (camera, microphone, location, Health, voice coach), **performance of a contract** (providing the App and your account), and our **legitimate interests** (security, diagnostics, improving the App). You may lodge a complaint with your local data protection authority.
 
-To exercise any right, contact us at arjuncw2009@gmail.com.
+To exercise any right, contact us at solescanteam@gmail.com.
 
 ## 8. Apple Health (HealthKit) specific terms
 
@@ -129,7 +129,7 @@ To exercise any right, contact us at arjuncw2009@gmail.com.
 
 ## 9. Account and data deletion
 
-You can delete your account and associated cloud data from within the App, or by emailing arjuncw2009@gmail.com. Deleting the App from your device also removes locally stored data (analysis history, cached coach audio, settings). Cloud-stored data tied to your account is deleted on request within `[30]` days, subject to legal retention requirements.
+You can delete your account and associated cloud data from within the App, or by emailing solescanteam@gmail.com. Deleting the App from your device also removes locally stored data (analysis history, cached coach audio, settings). Cloud-stored data tied to your account is deleted on request within `[30]` days, subject to legal retention requirements.
 
 ## 10. Children's privacy
 
@@ -141,6 +141,6 @@ We may update this Privacy Policy from time to time. We will revise the "Last up
 
 ## 12. Contact us
 
-Arjun Wategaonkar
-Email: arjuncw2009@gmail.com
+Gaita
+Email: solescanteam@gmail.com
 Address: 18 Kara E, California, USA

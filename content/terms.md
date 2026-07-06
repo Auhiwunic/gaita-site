@@ -4,7 +4,7 @@
 **Effective date:** June 22, 2026
 **Last updated:** July 3, 2026
 
-These Terms & Conditions ("Terms") are a binding agreement between you and Arjun Wategaonkar ("Gaita," "we," "us," or "our") governing your use of the Gaita mobile application and related services (the "App"). **By downloading, accessing, or using the App, you agree to these Terms and to our [Privacy Policy](./PRIVACY_POLICY.md). If you do not agree, do not use the App.**
+These Terms & Conditions ("Terms") are a binding agreement between you and Gaita ("we," "us," or "our") governing your use of the Gaita mobile application and related services (the "App"). **By downloading, accessing, or using the App, you agree to these Terms and to our [Privacy Policy](./PRIVACY_POLICY.md). If you do not agree, do not use the App.**
 
 ---
 
@@ -61,7 +61,7 @@ The App relies on third-party services (including Apple, Google/Firebase, OpenAI
 
 ## 9. Intellectual property
 
-The App, including its software, design, text, graphics, the "Gaita" name and logo, and all related intellectual property, is owned by Arjun Wategaonkar or its licensors and is protected by law. These Terms grant you no rights to our trademarks or branding.
+The App, including its software, design, text, graphics, the "Gaita" name and logo, and all related intellectual property, is owned by Gaita or its licensors and is protected by law. These Terms grant you no rights to our trademarks or branding.
 
 ## 10. Paid features and subscriptions (if offered)
 
@@ -81,15 +81,15 @@ We may suspend or terminate your access if you violate these Terms or to protect
 
 ## 14. Limitation of liability
 
-**TO THE MAXIMUM EXTENT PERMITTED BY LAW, Arjun Wategaonkar AND ITS SUPPLIERS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY PERSONAL INJURY, LOSS OF DATA, OR LOSS OF PROFITS, ARISING FROM OR RELATED TO YOUR USE OF THE APP.** Our total liability for any claim relating to the App will not exceed the greater of the amount you paid us for the App in the 12 months before the claim, or USD $50. Some jurisdictions do not allow certain limitations, so some of the above may not apply to you.
+**TO THE MAXIMUM EXTENT PERMITTED BY LAW, Gaita AND ITS SUPPLIERS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY PERSONAL INJURY, LOSS OF DATA, OR LOSS OF PROFITS, ARISING FROM OR RELATED TO YOUR USE OF THE APP.** Our total liability for any claim relating to the App will not exceed the greater of the amount you paid us for the App in the 12 months before the claim, or USD $50. Some jurisdictions do not allow certain limitations, so some of the above may not apply to you.
 
 ## 15. Indemnification
 
-You agree to indemnify and hold harmless Arjun Wategaonkar from any claims, damages, or expenses (including reasonable legal fees) arising from your misuse of the App, your violation of these Terms, or your violation of any law or third-party right.
+You agree to indemnify and hold harmless Gaita from any claims, damages, or expenses (including reasonable legal fees) arising from your misuse of the App, your violation of these Terms, or your violation of any law or third-party right.
 
 ## 16. Apple-specific terms
 
-These Terms are between you and Arjun Wategaonkar, not Apple. Apple is not responsible for the App or its content. Apple has no obligation to provide support or maintenance for the App. In the event of any failure of the App to conform to any warranty, you may notify Apple and Apple may refund the purchase price (if any); Apple has no other warranty obligation. Apple is a third-party beneficiary of these Terms and may enforce them. You represent that you are not located in a country subject to a U.S. Government embargo or designated as "terrorist-supporting," and that you are not on any U.S. Government restricted-parties list.
+These Terms are between you and Gaita, not Apple. Apple is not responsible for the App or its content. Apple has no obligation to provide support or maintenance for the App. In the event of any failure of the App to conform to any warranty, you may notify Apple and Apple may refund the purchase price (if any); Apple has no other warranty obligation. Apple is a third-party beneficiary of these Terms and may enforce them. You represent that you are not located in a country subject to a U.S. Government embargo or designated as "terrorist-supporting," and that you are not on any U.S. Government restricted-parties list.
 
 ## 17. Governing law & dispute resolution
 
@@ -101,5 +101,5 @@ If any provision is held unenforceable, the rest remains in effect. Our failure 
 
 ## 19. Contact
 
-Arjun Wategaonkar
-Email: arjuncw2009@gmail.com
+Gaita
+Email: solescanteam@gmail.com

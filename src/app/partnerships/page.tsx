@@ -57,7 +57,7 @@ export default function PartnershipsPage() {
         </div>
 
         <a
-          href="mailto:arjuncw2009@gmail.com?subject=Partnership"
+          href="mailto:solescanteam@gmail.com?subject=Partnership"
           className="mt-12 inline-block rounded-full bg-accent px-7 py-3.5 font-semibold text-ink transition-transform duration-300 hover:scale-[1.03]"
         >
           Start the conversation
