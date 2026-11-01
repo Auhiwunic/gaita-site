@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Gaita — Your super AI running coach",
+    name: "Gaita — Your all in one running trainer",
     short_name: "Gaita",
     description:
-      "A super AI running coach in your pocket. Form, gait and power, read off one video.",
+      "An all in one running trainer in your pocket. Form, gait and power, read off one video.",
     start_url: "/",
     display: "standalone",
     background_color: "#f1f1ef", // --color-bone

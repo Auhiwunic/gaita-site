@@ -68,7 +68,7 @@ export default function AccessCTA() {
 
           <form
             onSubmit={onSubmit}
-            className="cta-reveal mt-10 flex max-w-md items-end gap-4"
+            className="cta-reveal mt-10 flex max-w-md flex-col items-stretch gap-4 sm:flex-row sm:items-end"
           >
             <input
               type="email"
@@ -76,12 +76,12 @@ export default function AccessCTA() {
               required
               aria-label="Email address for early access"
               placeholder="you@email.com"
-              className="flex-1 border-b border-ink/40 bg-transparent pb-2 text-ink placeholder:text-soft focus:border-accent focus:outline-none"
+              className="min-w-0 flex-1 border-b border-ink/40 bg-transparent pb-2 text-ink placeholder:text-soft focus:border-accent focus:outline-none"
             />
             <button
               type="submit"
               disabled={state === "sending" || state === "done"}
-              className="meta shrink-0 rounded-full bg-accent px-6 py-3 !text-accent-ink transition-transform duration-300 hover:scale-[1.03] disabled:opacity-60"
+              className="meta shrink-0 rounded-full bg-accent px-6 py-3 text-center !text-accent-ink transition-transform duration-300 hover:scale-[1.03] disabled:opacity-60"
             >
               {state === "done"
                 ? "You are on the list"

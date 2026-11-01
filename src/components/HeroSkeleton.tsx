@@ -97,9 +97,9 @@ export default function HeroSkeleton() {
           src="/photos/gait-sideview.webp"
           alt="Side view of a runner tracked by a pose skeleton"
           fill
-          preload
+          priority
           sizes="100vw"
-          className="object-cover object-[60%_center]"
+          className="object-cover object-center"
         />
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"
@@ -145,12 +145,12 @@ export default function HeroSkeleton() {
 
       {/* Foreground content */}
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1440px] flex-col justify-end px-5 pb-10 pt-28 md:px-10 md:pb-14">
-        <h1 className="display-caps text-ink [font-size:clamp(3.6rem,13vw,10.5rem)]">
+        <h1 className="display-caps text-ink [font-size:clamp(3.2rem,11.5vw,9.5rem)]">
           <span className="block overflow-hidden">
-            <span className="hs-line block">Super AI</span>
+            <span className="hs-line block">All in one</span>
           </span>
           <span className="block overflow-hidden">
-            <span className="hs-line block">coach</span>
+            <span className="hs-line block">trainer</span>
           </span>
         </h1>
 

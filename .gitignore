@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated marketing images (rebuild with scripts/build-*.mjs)
+ads/*.png
+ig/*.png
+ad-frames/*.png
+ad-frames/*.zip

@@ -1,0 +1,53 @@
+GAITA — INSTAGRAM REEL BUILD GUIDE
+==================================
+9 branded frames (1080x1920, 9:16). Play the 7 below in order for a ~13.6s reel.
+Keep this file open while you work in Higgsfield.
+
+THE SEQUENCE  (tension -> proof -> aspiration -> CTA)
+----------------------------------------------------
+1. frame-7-blind.png          "YOU TRAIN BLIND"          hold 1.8s
+   Motion: slow push-in on the blur, drifts left to right, zoom in ~4%. Keep center clear. Camera: slow dolly in.
+
+2. frame-8-injuries.png       "GUESSING AT INJURIES"     hold 1.8s
+   Motion: horizontal streaks continue as camera tracks sideways with the runner. Text holds still. Camera: lateral tracking pan.
+
+3. frame-2-analysis-white.png "SEE YOUR STRIDE"          hold 2.0s
+   Motion: phone eases up ~3%, foot-strike heatmap gently pulses, rest locked. Camera: slow vertical rise.
+
+4. frame-3-metrics-black.png  "EIGHT ANGLES. ONE VIDEO." hold 2.0s
+   Motion: cyan glow breathes brighter then settles, numbers stay sharp, drift in ~3%. Camera: slow dolly in.
+
+5. frame-4-coach-white.png    "A COACH IN YOUR EAR"      hold 2.0s
+   Motion: reply bubble fades up as phone tilts a hair toward camera. Camera: subtle parallax tilt.
+
+6. frame-9-free-forever.png   "FREE FOREVER"             hold 1.8s
+   Motion: words settle with a faint ~2% scale ease, then stillness. Camera: near-locked breathe.
+
+7. frame-6-cta.png            "GET EARLY ACCESS"         hold 2.2s
+   Motion: lanes glide toward camera, cyan CTA holds dead center. Camera: slow forward dolly down the lane.
+
+SPARES (not in the cut): frame-1-hook.png, frame-5-motion.png
+
+HIGGSFIELD SETTINGS (per clip)
+------------------------------
+- Mode: Image to Video
+- Aspect ratio: 9:16
+- Duration: 3s (you will trim to the holds above in editing)
+- Prompt: paste the "Motion:" line for that frame
+- Motion / strength: LOW  (so the text stays sharp and readable)
+- Generate, review, regenerate if the type warps, then Download
+
+CAPCUT ASSEMBLY (free, phone or desktop)
+----------------------------------------
+- New project, 9:16, 1080x1920
+- Import the 7 clips, drop them on the timeline in order 1 to 7
+- Trim each to its hold length above (total ~13.6s)
+- Add a beat-driven trending audio track; cut on the beat if you can
+- Optional: 4 to 6 frame cross-dissolve between clips, or hard cuts for punch
+- Export 1080x1920, 30fps, high quality
+
+POST
+----
+- Instagram > Reel > upload the export
+- Caption ends with: gaita-site.vercel.app
+- Cover: use frame-1-hook.png or frame-7-blind.png

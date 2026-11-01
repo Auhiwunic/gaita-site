@@ -32,11 +32,11 @@ const switzer = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gaita-site.vercel.app"),
   title: {
-    default: "Gaita — Your super AI running coach",
+    default: "Gaita — Your all in one running trainer",
     template: "%s — Gaita",
   },
   description:
-    "Gaita is a super AI running coach in your pocket. It reads your form, gait and power off one video, then coaches the fix in your ear.",
+    "Gaita is an all in one running trainer in your pocket. It reads your form, gait and power off one video, then coaches the fix in your ear.",
   keywords: [
     "AI running coach",
     "running form analysis",
@@ -45,18 +45,18 @@ export const metadata: Metadata = {
     "running biomechanics",
   ],
   openGraph: {
-    title: "Gaita — Your super AI running coach",
+    title: "Gaita — Your all in one running trainer",
     description:
-      "A super AI running coach in your pocket. Form, gait and power, read off one video.",
+      "An all in one running trainer in your pocket. Form, gait and power, read off one video.",
     url: "https://gaita-site.vercel.app",
     siteName: "Gaita",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gaita — Your super AI running coach",
+    title: "Gaita — Your all in one running trainer",
     description:
-      "A super AI running coach in your pocket. Form, gait and power, read off one video.",
+      "An all in one running trainer in your pocket. Form, gait and power, read off one video.",
   },
   alternates: {
     canonical: "/",
